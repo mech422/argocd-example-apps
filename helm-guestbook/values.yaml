@@ -19,9 +19,10 @@ ingress:
   annotations: # {}
     kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
-  path: /
+  #path: /
+  path: /helm-guestbook
   hosts:
-    - chart-example.local
+    #- values.hosts.local
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
