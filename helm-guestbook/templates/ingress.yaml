@@ -27,4 +27,14 @@ spec:
           serviceName: helm-guestbook
           servicePort: 80
 {{- end -}}
+{{- if .Values.ingress.tls }}
+  - host: {{ .Values.ingress.hostname }}
+    https:
+      paths:
+      - path: {{ .Values.ingress.path }}
+        backend:
+          # serviceName: {{ template "helm-guestbook.fullname" . }}
+          serviceName: helm-guestbook
+          servicePort: 443 
+{{- end -}}
 
