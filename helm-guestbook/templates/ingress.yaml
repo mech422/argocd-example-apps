@@ -23,7 +23,8 @@ spec:
       paths:
       - path: {{ .Values.ingress.path }}
         backend:
-          serviceName: {{ template "helm-guestbook.fullname" . }}
+          # serviceName: {{ template "helm-guestbook.fullname" . }}
+          serviceName: helm-guestbook
           servicePort: 80
 {{- end -}}
 
